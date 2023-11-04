@@ -1,0 +1,11 @@
+printf 'Content-Type: text/html\n\n'
+
+v() {
+  if [ $1 ]; then
+    view=$(cat ${SHTTR_APP}/views/${1})
+  else
+    view="$(cat)"
+  fi
+
+  echo "${view}" | envsubst
+}

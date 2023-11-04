@@ -1,0 +1,35 @@
+<div class="container border shadow bg-dark p-4" data-turn-enter data-turn-exit>
+  <h1 class="text-center">Contact Me</h1>
+  <p class="text-danger text-center">
+    Form temporarily disabled due to abuse. Please send all inquiries to <a href="mailto:caleb@calebstein.net">caleb@calebstein.net</a> directly for the time being.
+  </p>
+  <form method="post">
+    <div class="form-floating mb-3">
+      <input class="form-control" type="email" name="email" placeholder="Email" required>
+      <label for="email">Email</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input class="form-control" type="text" name="subject" placeholder="Subject" required>
+      <label for="subject">Subject</label>
+    </div>
+    <div class="form-floating mb-3">
+      <textarea class="form-control" name="message" placeholder="Message" style="height:120px" required></textarea>
+      <label for="Message">Message</label>
+    </div>
+    <input class="w-100 btn btn-info" type="submit" value="Send Message">
+  </form>
+  <div class="toast align-items-center text-bg-danger position-fixed top-0 start-50 translate-middle-x" id="errorMsg" style="margin-top: 72px;" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        Form temporarily disabled
+      </div>
+      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+  <script>
+    window.addEventListener("turbo:submit-end", (e) => {
+      if (!e.detail.formSubmission.result.success) {
+        bootstrap.Toast.getOrCreateInstance(document.getElementById("errorMsg")).show();
+      }
+    });
+  </script>

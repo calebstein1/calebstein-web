@@ -1,0 +1,30 @@
+<div class="container border text-center shadow bg-dark p-4" data-turn-enter data-turn-exit>
+  <h1>Log In</h1>
+  <form method="post">
+    <input type="hidden" name="_action" value="sign_in">
+    <div class="form-floating mb-3">
+      <input class="form-control" type="email" name="username" placeholder="Email" required>
+      <label for="username">Email</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input class="form-control" type="password" name="password" placeholder="Password" required>
+      <label for="password">Password</label>
+    </div>
+    <input class="w-100 btn btn-info" type="submit" value="Log In">
+  </form>
+</div>
+<div class="toast align-items-center text-bg-danger position-fixed top-0 start-50 translate-middle-x" id="errorMsg" style="margin-top: 72px;" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="d-flex">
+    <div class="toast-body">
+      Incorrect username or password
+    </div>
+    <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+</div>
+<script>
+  window.addEventListener("turbo:submit-end", (e) => {
+    if (!e.detail.formSubmission.result.success) {
+      bootstrap.Toast.getOrCreateInstance(document.getElementById("errorMsg")).show();
+    }
+  });
+</script>
