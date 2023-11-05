@@ -5,7 +5,7 @@ v shared/nav.html
 
 echo '<div class="d-flex flex-column align-items-center container">'
 
-v photography/index.html
+v index.html
 
 cat <<EOF
 <div id="galleries" class="carousel slide">
@@ -19,32 +19,12 @@ for photo_id in $photography_id_list; do
   export cover_photo
   export url
   if [ $photo_id -eq 1 ]; then
-    v photography/gallery-first.html
+    v gallery-first.html
   else
-    v photography/gallery.html
+    v gallery.html
   fi
 done
-cat <<EOF
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#galleries" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#galleries" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-<script>
-  window.addEventListener("turbo:load", () => {
-    const galleries = document.querySelector('#galleries')
+echo "</div>"
 
-    const carousel = new bootstrap.Carousel(galleries, {
-      touch: true
-    });
-  });
-</script>
-</div>
-EOF
-
+v carousel-controls.html
 v shared/btm.html

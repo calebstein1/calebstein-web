@@ -2,7 +2,7 @@ use esh
 
 v shared/app.html
 v shared/nav.html
-vf contact/index.html
+vf index.html
 
 if [ "$notice" ]; then
   v shared/flash.html

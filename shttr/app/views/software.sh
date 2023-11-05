@@ -5,7 +5,7 @@ v shared/nav.html
 
 echo '<div class="d-flex flex-column align-items-center container">'
 
-v software/index.html
+v index.html
 
 echo '<div class="d-flex flex-wrap gap-4">'
 for software_id in $software_id_list; do
@@ -25,21 +25,10 @@ for software_id in $software_id_list; do
   fi
   export name
   export description
-  v software/card.html
+  v card.html
 done
 echo "</div></div>"
 
-cat <<EOF
-<script>
-  document.querySelectorAll(".card").forEach(card => {
-    card.addEventListener("mouseenter", () => {
-      card.classList.add("shadow-lg");
-    });
-    card.addEventListener("mouseleave", () => {
-      card.classList.remove("shadow-lg");
-    });
-  });
-</script>
-EOF
+v hover.html
 
 v shared/btm.html

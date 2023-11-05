@@ -6,12 +6,12 @@ v shared/nav.html
 echo '<div class="d-flex flex-column align-items-center container">'
 
 if [ $signed_in -eq 1 ]; then
-  vf admin/index.html
-  v admin/nav.html
+  vf index.html
+  v nav.html
   if [ $p ]; then
-    vf admin/${p}.html
+    vf ${p}.html
   else
-    vf admin/software.html
+    vf software.html
   fi
   echo "</div>"
 fi
