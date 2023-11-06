@@ -30,6 +30,7 @@ $toast-background-color: rgba(var(--bs-body-bg-rgb), .95);
 }
 
 @import "../../../../bootstrap/bootstrap";
+@import "../node_modules/@domchristie/turn/dist/turn";
 
 body {
   background-image: url("/app/assets/images/background.gif");
