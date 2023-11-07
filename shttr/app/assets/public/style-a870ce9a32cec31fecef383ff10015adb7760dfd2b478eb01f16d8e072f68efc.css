@@ -1,52 +1,3 @@
-[data-turn-exit],
-[data-turn-enter] {
-  animation-timing-function: cubic-bezier(0.65, 0.05, 0.35, 1);
-  animation-fill-mode: forwards;
-}
-
-html.turn-advance.turn-exit [data-turn-exit] {
-  animation-name: fade-out-up;
-  animation-duration: .3s;
-}
-
-html.turn-advance.turn-enter [data-turn-enter] {
-  animation-name: fade-in-up;
-  animation-duration: .6s;
-}
-
-html.turn-advance.turn-before-transition [data-turn-exit],
-html.turn-advance.turn-transition [data-turn-exit] {
-  opacity: 0;
-}
-
-html.turn-before-exit [data-turn-exit],
-html.turn-exit [data-turn-exit] {
-  will-change: transform, opacity;
-}
-
-@keyframes fade-out-up {
-  0% {
-    opacity: 1;
-    transform: translateZ(0)
-  }
-
-  100% {
-    opacity: 0;
-    transform: translate3d(0, -4rem, 0)
-  }
-}
-
-@keyframes fade-in-up {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, 4rem, 0)
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateZ(0)
-  }
-}
 @charset "UTF-8";
 ::-moz-selection {
   color: #ECEFF4;
@@ -12113,10 +12064,52 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-body {
-  background-image: url("/app/assets/images/background.gif");
+[data-turn-exit],
+[data-turn-enter] {
+  animation-timing-function: cubic-bezier(0.65, 0.05, 0.35, 1);
+  animation-fill-mode: forwards;
 }
 
+html.turn-advance.turn-exit [data-turn-exit] {
+  animation-name: fade-out-up;
+  animation-duration: 0.3s;
+}
+
+html.turn-advance.turn-enter [data-turn-enter] {
+  animation-name: fade-in-up;
+  animation-duration: 0.6s;
+}
+
+html.turn-advance.turn-before-transition [data-turn-exit],
+html.turn-advance.turn-transition [data-turn-exit] {
+  opacity: 0;
+}
+
+html.turn-before-exit [data-turn-exit],
+html.turn-exit [data-turn-exit] {
+  will-change: transform, opacity;
+}
+
+@keyframes fade-out-up {
+  0% {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -4rem, 0);
+  }
+}
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 4rem, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
 .card {
   transition: box-shadow 0.2s ease-in;
 }

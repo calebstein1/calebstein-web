@@ -6,9 +6,24 @@
     <title>${TITLE}</title>
     <link rel="stylesheet" href="${STYLESHEET}">
     ${VENDOR_SCRIPTS}
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "${node_three}/build/three.module.js",
+          "three/addons/": "${node_three}/examples/jsm/",
+          "turn": "${node_turn}/dist/turn.min.js",
+          "background": "${SHTTR_ASSETS}/scripts/main.js"
+        }
+      }
+    </script>
     <script type="module">
-      import Turn from '${node_turn}/dist/turn.min.js';
+      import Turn from 'turn';
       Turn.start();
     </script>
+    <script type="module">
+      import animate from 'background';
+      animate();
+    </script>
   </head>
-  <body style="padding-top: 72px;">
+  <body class="d-flex flex-column" style="padding-top: 72px;min-height: 100svh;">
+    <div id="threejs-bg" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -100;" data-turbo-permanent></div>
