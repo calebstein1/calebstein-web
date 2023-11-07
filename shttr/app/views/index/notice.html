@@ -1,7 +1,13 @@
 <div class="flex-grow-1"></div>
 <div class="container text-center" data-turn-enter data-turn-exit>
-<p>
-  <small>
-    <a target="_blank" href="https://skfb.ly/6xEsD">Galaxy</a> by 991519166 is licensed under <a target="_blank" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution</a>.
-  </small>
-</p>
+  <button class="btn btn-link" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content='"Galaxy" (https://skfb.ly/6xEsD) by 991519166 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).'>
+    <small>
+      Galaxy Model License
+    </small>
+  </button>
+<script>
+  window.addEventListener("turbo:load", () => {
+    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+    const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
+  });
+</script>  
