@@ -2,7 +2,7 @@
 
 Source code for [calebstein.net](https://calebstein.net).
 
-Built using [Shell on the Shttr](https://git.calebstein.net/calebstein1/sh-on-the-shttr).
+Built using [Shell on the Shttr](https://github.com/calebstein1/sh-on-the-shttr).
 
 ## Build
 
