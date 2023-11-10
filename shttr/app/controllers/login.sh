@@ -1,4 +1,4 @@
-use io, shttrdb, accounts, validator, flash, form
+use shttrdb, accounts, validator, flash, form
 
 parse_input
 check_sign_in

@@ -1,3 +1,5 @@
+parse_cookies
+
 TITLE="About Me"
 export TITLE
 
