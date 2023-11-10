@@ -15,6 +15,7 @@ if [ $signed_in -eq 1 ]; then
     vf software.html
   fi
   vf sign_out.html
+  vf x_server.html
   echo "</turbo-frame>"
   echo "</div>"
 fi

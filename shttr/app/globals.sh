@@ -1,8 +1,8 @@
-use io, @domchristie/turn, three
+use io, form, @domchristie/turn, three
 
 parse_cookies
 
 if [ "$x_server" = "true" ]; then
-  x_server_nav="<li class=\"nav-item\"><a class=\"nav-link active\" href=\"https://calebstein1.github.io/\">Kill X Server</a></li>"
+  x_server_nav="<li class=\"nav-item\"><button class=\"nav-link active\" form=\"x-server\">Kill X Server</button></li>"
   export x_server_nav
 fi
