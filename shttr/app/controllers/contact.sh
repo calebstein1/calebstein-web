@@ -9,7 +9,7 @@ export TITLE
 . ${SHTTR_APP}/models/${CONTROLLER}
 
 if [ "$REQUEST_METHOD" = "POST" ]; then
-  if [ $validated ]; then
+  if [ $validated -eq 1 ]; then
     #mail_id=$(create_table_entry in emails_sent)
     #write_data ${mail_id} email ${email} to emails_sent
     #write_data ${mail_id} subject ${subject} to emails_sent

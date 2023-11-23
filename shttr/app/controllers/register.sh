@@ -9,7 +9,7 @@ export TITLE
 export MODEL_DATA
 
 if [ "$REQUEST_METHOD" = "POST" ]; then
-  if [ $validated ]; then
+  if [ $validated -eq 1 ]; then
     register "${username}" "${password}" "/" &&\
     user_id=$(find_by username "$(url_string_decode ${username})" from users) &&\
     write_data ${user_id} full_name ${full_name} to users
