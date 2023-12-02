@@ -32,6 +32,6 @@ for software_id in $software_id_list; do
   v card.html
   collapse_id_num=$(( $collapse_id_num + 1 ))
 done
-echo "</ul></div></div>"
+echo "</ul></div></div></div>"
 
 v shared/btm.html
