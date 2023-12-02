@@ -4,7 +4,7 @@
 
 @import "../../../../node_modules/nord/src/sass/nord.scss";
 
-$body_bg: $nord6;
+$body_bg: $nord4;
 $body_color: $nord0;
 
 
@@ -42,4 +42,13 @@ $toast-background-color: rgba(var(--bs-body-bg-rgb), .95);
 
 .turbo-progress-bar {
   background-color: $nord8;
+}
+
+.blink {
+  animation: cursor 1s step-start infinite;
+}
+@keyframes cursor {
+  50% {
+    opacity: 0;
+  }
 }

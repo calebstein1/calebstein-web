@@ -1,14 +1,20 @@
-<div class="card" style="width: 18rem; min-width: 18rem;">
-  <div class="card-body d-flex flex-column">
-    <h5 class="card-title">${name}</h5>
-    <p class="card-text flex-grow-1">${description}</p>
-    <ul class="d-flex justify-content-between list-unstyled">
-      <li>
-        ${code_link}
-      </li>
-      <li>
-        ${site_link}
-      </li>
-    </ul>
+<li class="list-group-item">
+  <button class="btn btn-link text-decoration-none" data-bs-toggle="collapse" data-bs-target="#${collapse_id}" aria-expanded="false" aria-controls="${collapse_id}">
+    <h4 class="text-start">
+      ${name}
+    </h4>
+  </button>
+  <div class="collapse" id="${collapse_id}">
+    <div class="card card-body">
+      <p class="card-text">${description}</p>
+      <ul class="d-flex justify-content-between list-unstyled">
+        <li>
+          ${code_link}
+        </li>
+        <li>
+          ${site_link}
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
+</li>

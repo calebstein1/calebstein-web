@@ -1,11 +1,10 @@
-<div class="container border shadow bg-dark p-4" data-turn-enter data-turn-exit>
-  <h1 class="text-center">Contact Me</h1>
+<div class="container p-4" data-turn-enter data-turn-exit>
   <p class="text-danger text-center">
     Form temporarily disabled due to abuse. Please send all inquiries to <a href="mailto:caleb@calebstein.net">caleb@calebstein.net</a> directly for the time being.
   </p>
   <form method="post">
     <div class="form-floating mb-3">
-      <input class="form-control" type="email" name="email" placeholder="Email" required>
+      <input class="form-control border" type="email" name="email" placeholder="Email" required>
       <label for="email">Email</label>
     </div>
     <div class="form-floating mb-3">
@@ -18,7 +17,7 @@
     </div>
     <input class="w-100 btn btn-info" type="submit" value="Send Message">
   </form>
-  <div class="toast align-items-center text-bg-danger position-fixed top-0 start-50 translate-middle-x" id="errorMsg" style="margin-top: 72px;" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast align-items-center text-bg-danger position-fixed top-0 start-50 translate-middle-x mt-4" id="errorMsg" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="d-flex">
       <div class="toast-body">
         Form temporarily disabled

@@ -22,12 +22,14 @@ for VENDOR_SCRIPT in $VENDOR_SCRIPT_LIST; do
 done
 export VENDOR_SCRIPTS
 
+[ -z $DEBUG_MODE ] && DEBUG_MODE=0
+export DEBUG_MODE
 validated=0
 export validated
 signed_in=0
 export signed_in
 
-alias npx="npx --prefix=/var/www/shttr/app/assets"
+alias npx="npx --prefix=${SHTTR_APP}/assets"
 
 . ${SHTTR_APP}/globals.sh
 . ${SHTTR_APP}/controllers/${CONTROLLER}

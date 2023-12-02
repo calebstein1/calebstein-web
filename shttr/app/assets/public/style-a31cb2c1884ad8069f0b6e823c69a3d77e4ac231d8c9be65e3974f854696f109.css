@@ -91,8 +91,8 @@
   --bs-body-line-height: 1.5;
   --bs-body-color: #2E3440;
   --bs-body-color-rgb: 46, 52, 64;
-  --bs-body-bg: #ECEFF4;
-  --bs-body-bg-rgb: 236, 239, 244;
+  --bs-body-bg: #D8DEE9;
+  --bs-body-bg-rgb: 216, 222, 233;
   --bs-emphasis-color: #000;
   --bs-emphasis-color-rgb: 0, 0, 0;
   --bs-secondary-color: rgba(46, 52, 64, 0.75);
@@ -2482,10 +2482,10 @@ textarea.form-control-lg {
   outline: 0;
 }
 .form-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #ECEFF4, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  box-shadow: 0 0 0 1px #D8DEE9, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 .form-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #ECEFF4, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  box-shadow: 0 0 0 1px #D8DEE9, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 .form-range::-moz-focus-outer {
   border: 0;
@@ -12116,4 +12116,14 @@ html.turn-exit [data-turn-exit] {
 
 .turbo-progress-bar {
   background-color: #88C0D0;
+}
+
+.blink {
+  animation: cursor 1s step-start infinite;
+}
+
+@keyframes cursor {
+  50% {
+    opacity: 0;
+  }
 }

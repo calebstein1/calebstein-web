@@ -22,15 +22,6 @@ if [ "$REQUEST_METHOD" = "POST" ]; then
       set_notice "Software added successfully!"
       do_redirect
     fi
-  elif [ "$_action" = "add_photo" ]; then
-    if [ $signed_in -eq 1 ]; then
-      photo_id=$(create_table_entry in photography)
-      write_data $photo_id name ${name} to photography 
-      write_data $photo_id url ${url} to photography
-      write_data $photo_id cover_photo ${cover_photo} to photography
-      set_notice "Album added successfully!"
-      do_redirect
-    fi
   elif [ "$_action" = "sign_out" ]; then
     sign_out "/cgi-bin/login.sh"
     set_notice "Signed out!"
