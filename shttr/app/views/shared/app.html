@@ -17,6 +17,22 @@
       import Turn from 'turn';
       Turn.start();
     </script>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        setColorScheme();
+      });
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        setColorScheme();
+      });
+
+      function setColorScheme() {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-bs-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-bs-theme', 'light');
+        }
+      }
+    </script>
   </head>
   <body class="d-flex flex-column font-monospace mt-4">
     <div class="container d-flex align-items-center gap-4">

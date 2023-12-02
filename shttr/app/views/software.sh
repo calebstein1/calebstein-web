@@ -8,7 +8,7 @@ echo '<div class="d-flex flex-column align-items-center container">'
 
 v index.html
 
-echo '<div class="d-flex flex-wrap gap-4"><ul class="list-group">'
+echo '<div class="d-flex flex-wrap gap-4"><ul class="list-unstyled d-flex flex-column gap-4">'
 collapse_id_num=1
 for software_id in $software_id_list; do
   collapse_id="sw_${collapse_id_num}"
