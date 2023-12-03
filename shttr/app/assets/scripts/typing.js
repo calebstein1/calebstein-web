@@ -7,7 +7,11 @@ window.addEventListener("keydown", (event) => {
 function getInput(input) {
   const curPage = Number(document.getElementById("page-id").value);
   const pageListId = [];
-  Array.from(document.getElementById("nav").children).forEach(navItem => { pageListId.push(navItem.getAttribute("data-pageid")); });
+  Array.from(document.getElementById("nav").children).forEach(navItem => {
+    if (!navItem.getAttribute("data-no-nav")) {
+      pageListId.push(navItem.getAttribute("data-pageid"));
+    }
+  });
 
   if (input == "j") {
     let nextPage = curPage + 1;
