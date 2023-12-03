@@ -1,6 +1,12 @@
 let viMode = true;
 let notLocked = true;
 const viToggle = document.getElementById("vi-toggle");
+const ua = navigator.userAgent;
+
+if ((ua.includes("iPhone")) || (ua.includes("iPad")) || (ua.includes("Android"))) {
+  viToggle.style.display = "none";
+  viMode = false;
+}
 
 viToggle.addEventListener("click", () => {
   if (viMode) {
