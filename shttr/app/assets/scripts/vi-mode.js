@@ -1,6 +1,24 @@
+let viMode = true;
+let notLocked = true;
+const viToggle = document.getElementById("vi-toggle");
+
+viToggle.addEventListener("click", () => {
+  if (viMode) {
+    viMode = false;
+    viToggle.classList.remove("btn-secondary");
+    viToggle.classList.add("btn-outline-secondary");
+  } else {
+    viMode = true;
+    viToggle.classList.remove("btn-outline-secondary");
+    viToggle.classList.add("btn-secondary");
+  }
+});
+
 window.addEventListener("keydown", (event) => { 
-  if ((document.activeElement.tagName != "INPUT") && (document.activeElement.tagName != "TEXTAREA")) {
+  if ((viMode) && (notLocked) && (document.activeElement.tagName != "INPUT") && (document.activeElement.tagName != "TEXTAREA")) {
+    notLocked = false;
     getInput(event.key);
+    setTimeout(() => { notLocked = true }, 1000);
   }
 });
 

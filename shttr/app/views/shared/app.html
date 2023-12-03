@@ -19,14 +19,21 @@
     </script>
     <script src="${SHTTR_ASSETS}/scripts/dark-mode.js"></script>
     <script src="${SHTTR_ASSETS}/scripts/nav-active.js"></script>
-    <script src="${SHTTR_ASSETS}/scripts/typing.js"></script> 
+    <script src="${SHTTR_ASSETS}/scripts/vi-mode.js" defer></script> 
   </head>
   <body class="d-flex flex-column font-monospace mt-4">
     <input type="hidden" id="page-id" name="page-id" value="${PAGE_ID}">
-    <div class="container d-flex align-items-center gap-4">
-      <button class="btn btn-link text-decoration-none d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#navMenu">
-        <h1>&gt;</h1>
-      </button>
-      <h1 class="mb-0 text-lowercase"># ${TITLE}<span class="blink">|</span></h1>
+    <div class="container d-flex justify-content-between">
+      <div class="d-flex align-items-center gap-4">
+        <button class="btn btn-link text-decoration-none d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#navMenu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+          </svg>
+        </button>
+        <h1 class="mb-0 text-lowercase"># ${TITLE}<span class="blink">|</span></h1>
+      </div>
+      <div>
+        <button class="d-none d-md-block btn btn-secondary" id="vi-toggle" data-turbo-permanent>vi mode</button>
+      </div>
     </div>
     <div class="d-flex container">
