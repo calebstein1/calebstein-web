@@ -32,14 +32,6 @@ $toast-background-color: rgba(var(--bs-body-bg-rgb), .95);
 @import "../../../../bootstrap/bootstrap";
 @import "../node_modules/@domchristie/turn/dist/turn";
 
-//body {
-//  background-image: url("/app/assets/images/background.gif");
-//}
-
-.card {
-  transition: box-shadow 0.2s ease-in;
-}
-
 .turbo-progress-bar {
   background-color: $nord8;
 }

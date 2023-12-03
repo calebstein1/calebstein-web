@@ -12110,10 +12110,6 @@ html.turn-exit [data-turn-exit] {
     transform: translateZ(0);
   }
 }
-.card {
-  transition: box-shadow 0.2s ease-in;
-}
-
 .turbo-progress-bar {
   background-color: #88C0D0;
 }
