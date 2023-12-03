@@ -1,6 +1,6 @@
 use shttrdb
 
-TITLE="Caleb Stein Software"
+TITLE="Software"
 export TITLE
 PAGE_ID=3
 export PAGE_ID
