@@ -17,24 +17,12 @@
       import Turn from 'turn';
       Turn.start();
     </script>
-    <script>
-      window.addEventListener('DOMContentLoaded', () => {
-        setColorScheme();
-      });
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-        setColorScheme();
-      });
-
-      function setColorScheme() {
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          document.documentElement.setAttribute('data-bs-theme', 'dark');
-        } else {
-          document.documentElement.setAttribute('data-bs-theme', 'light');
-        }
-      }
-    </script>
+    <script src="${SHTTR_ASSETS}/scripts/dark-mode.js"></script>
+    <script src="${SHTTR_ASSETS}/scripts/nav-active.js"></script>
+    <script src="${SHTTR_ASSETS}/scripts/typing.js"></script> 
   </head>
   <body class="d-flex flex-column font-monospace mt-4">
+    <input type="hidden" id="page-id" name="page-id" value="${PAGE_ID}">
     <div class="container d-flex align-items-center gap-4">
       <button class="btn btn-link text-decoration-none d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#navMenu">
         <h1>&gt;</h1>

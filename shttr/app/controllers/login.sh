@@ -6,6 +6,8 @@ read_flash
 
 TITLE="Log In"
 export TITLE
+PAGE_ID=5
+export PAGE_ID
 
 . ${SHTTR_APP}/models/${CONTROLLER}
 

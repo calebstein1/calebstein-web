@@ -6,6 +6,8 @@ read_flash
 
 TITLE="Admin Panel"
 export TITLE
+PAGE_ID=5
+export PAGE_ID
 
 if [ $signed_in -ne 1 ]; then
   do_redirect to "/cgi-bin/login.sh"
