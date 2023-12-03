@@ -5,7 +5,7 @@ read_flash
 
 TITLE="Contact Me"
 export TITLE
-PAGE_ID=4
+PAGE_ID=5
 export PAGE_ID
 
 . ${SHTTR_APP}/models/${CONTROLLER}
