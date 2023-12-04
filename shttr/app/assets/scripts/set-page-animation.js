@@ -1,6 +1,6 @@
-window.addEventListener("turbo:before-render", (e) => {
+window.addEventListener("turbo:before-fetch-request", (e) => {
   const css = document.styleSheets[1];
-  nextPage = e.detail.newBody.firstElementChild.value;
+  nextPage = document.querySelector(`[href="${e.detail.url.pathname}"]`).parentElement.getAttribute("data-pageid");
 
   //this is gross :(
   if (nextPage < curPage) {
