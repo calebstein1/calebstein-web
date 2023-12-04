@@ -1,4 +1,9 @@
 window.addEventListener("turbo:load", () => {
+  if (viaScroll) {
+    document.documentElement.scrollTop = document.body.scrollHeight;
+    viaScroll = false;
+  }
+
   const pageList = Array.from(document.getElementById("nav").children);
   let pageID = 1;
   pageList.forEach(navItem => {

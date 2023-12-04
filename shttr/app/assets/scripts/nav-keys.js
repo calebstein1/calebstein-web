@@ -8,6 +8,23 @@ if ((ua.includes("iPhone")) || (ua.includes("iPad")) || (ua.includes("Android"))
   viMode = false;
 }
 
+window.addEventListener("wheel", (e) => {
+  if ((e.wheelDeltaY > 0) && (notLocked)) {
+    if (window.scrollY == 0) {
+      notLocked = false;
+      getInput("k");
+      viaScroll = true;
+      setTimeout(() => { notLocked = true }, 1000);
+    }
+  } else {
+    if (((window.innerHeight + window.scrollY) >= document.body.scrollHeight) && (notLocked)) {
+      notLocked = false;
+      getInput("j");
+      setTimeout(() => { notLocked = true }, 1000);
+    }
+  }
+});
+
 viToggle.addEventListener("click", () => {
   if (viMode) {
     viMode = false;
