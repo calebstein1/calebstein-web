@@ -5,7 +5,8 @@ window.addEventListener("turbo:load", () => {
     navItem.setAttribute("data-pageid", pageID);
     pageID++;
   });
-  const curPage = document.getElementById("page-id").value;
+  prevPage = curPage
+  curPage = document.getElementById("page-id").value;
 
   if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.querySelector(`[data-pageid="${curPage}"]`).classList.add("bg-dark");
@@ -15,8 +16,6 @@ window.addEventListener("turbo:load", () => {
 });
 
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-  const curPage = document.getElementById("page-id").value;
-
   if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.querySelector(`[data-pageid="${curPage}"]`).classList.remove("bg-light");
     document.querySelector(`[data-pageid="${curPage}"]`).classList.add("bg-dark");
