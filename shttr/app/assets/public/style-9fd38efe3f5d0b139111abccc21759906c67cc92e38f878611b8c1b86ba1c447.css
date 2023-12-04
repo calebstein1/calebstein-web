@@ -12130,6 +12130,46 @@ html.turn-exit [data-turn-exit] {
     transform: translateZ(0);
   }
 }
+@keyframes fade-out-left {
+  0% {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(-4rem, 0, 0);
+  }
+}
+@keyframes fade-in-left {
+  0% {
+    opacity: 0;
+    transform: translate3d(4rem, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+@keyframes fade-out-right {
+  0% {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(4rem, 0, 0);
+  }
+}
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    transform: translate3d(-4rem, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
 .turbo-progress-bar {
   background-color: #88C0D0;
 }

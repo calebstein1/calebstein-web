@@ -2,10 +2,24 @@ let viMode = true;
 let notLocked = true;
 const viToggle = document.getElementById("vi-toggle");
 const ua = navigator.userAgent;
+const listener = SwipeListener(window);
+let direction;
 
 if ((ua.includes("iPhone")) || (ua.includes("iPad")) || (ua.includes("Android"))) {
   viToggle.style.display = "none";
   viMode = false;
+
+  window.addEventListener("swipe", (e) => {
+    direction = e.detail.directions;
+
+    if (direction.left) {
+      viaSwipe = "left";
+      getInput("j");
+    } else if (direction.right) {
+      viaSwipe = "right";
+      getInput("k");
+    }
+  });
 }
 
 window.addEventListener("wheel", (e) => {
