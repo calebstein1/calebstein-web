@@ -17,17 +17,10 @@
     </div>
     <input class="w-100 btn btn-info" type="submit" value="Send Message">
   </form>
-  <div class="toast align-items-center text-bg-danger position-fixed top-0 start-50 translate-middle-x mt-4" id="errorMsg" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="d-flex">
-      <div class="toast-body">
-        Form temporarily disabled
-      </div>
-      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-    </div>
-  </div>
   <script>
     window.addEventListener("turbo:submit-end", (e) => {
       if (!e.detail.formSubmission.result.success) {
+        document.getElementById("error-text").textContent = "Form temporarily disabled"
         bootstrap.Toast.getOrCreateInstance(document.getElementById("errorMsg")).show();
       }
     });
