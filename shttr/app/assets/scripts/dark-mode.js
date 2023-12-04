@@ -5,6 +5,10 @@ window.addEventListener('DOMContentLoaded', () => {
     setColorScheme("light");
   }
 
+  setTimeout(() => {
+    document.styleSheets[1].insertRule("* { transition: background-color 0.5s ease-in-out, color 1s ease-in-out; }", document.styleSheets[1].rules.length);
+  }, 500);
+
   document.getElementById("dark-mode-toggle").addEventListener("click", () => {
     if (colorScheme == "dark") {
       setColorScheme("light");

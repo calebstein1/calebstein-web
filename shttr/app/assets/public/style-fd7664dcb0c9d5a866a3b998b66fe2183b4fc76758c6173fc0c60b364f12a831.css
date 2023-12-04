@@ -12183,3 +12183,27 @@ html.turn-exit [data-turn-exit] {
     opacity: 0;
   }
 }
+#mobile-only {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.arrow-hint {
+  animation: wobble 0.5s infinite, pulse 4s infinite;
+}
+
+@keyframes wobble {
+  25% {
+    transform: rotate(2deg) scale(1);
+  }
+  50% {
+    transform: rotate(0deg) scale(1);
+  }
+  75% {
+    transform: rotate(-2deg) scale(1);
+  }
+}
+@keyframes pulse {
+  50% {
+    opacity: 40%;
+  }
+}

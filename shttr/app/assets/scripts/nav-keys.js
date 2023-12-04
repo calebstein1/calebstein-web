@@ -6,18 +6,26 @@ const listener = SwipeListener(window);
 let direction;
 
 if ((ua.includes("iPhone")) || (ua.includes("iPad")) || (ua.includes("Android"))) {
+  setTimeout(() => {
+    document.getElementById("mobile-only").classList.remove("opacity-0");
+    document.getElementById("mobile-only").classList.add("opacity-25");
+  }, 10000);
   viToggle.style.display = "none";
   viMode = false;
 
   window.addEventListener("swipe", (e) => {
     direction = e.detail.directions;
 
-    if (direction.left) {
+    if ((direction.left) && (notLocked)) {
+      notLocked = false;
       viaSwipe = "left";
       getInput("j");
-    } else if (direction.right) {
+      setTimeout(() => { notLocked = true }, 1000);
+    } else if ((direction.right) && (notLocked)) {
+      notLocked = false;
       viaSwipe = "right";
       getInput("k");
+      setTimeout(() => { notLocked = true }, 1000);
     }
   });
 }
