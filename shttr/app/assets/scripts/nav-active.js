@@ -13,19 +13,9 @@ window.addEventListener("turbo:load", () => {
   prevPage = curPage
   curPage = document.getElementById("page-id").value;
 
-  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  if (colorScheme == "dark") {
     document.querySelector(`[data-pageid="${curPage}"]`).classList.add("bg-dark");
   } else {
-    document.querySelector(`[data-pageid="${curPage}"]`).classList.add("bg-light");
-  }
-});
-
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.querySelector(`[data-pageid="${curPage}"]`).classList.remove("bg-light");
-    document.querySelector(`[data-pageid="${curPage}"]`).classList.add("bg-dark");
-  } else {
-    document.querySelector(`[data-pageid="${curPage}"]`).classList.remove("bg-dark");
     document.querySelector(`[data-pageid="${curPage}"]`).classList.add("bg-light");
   }
 });

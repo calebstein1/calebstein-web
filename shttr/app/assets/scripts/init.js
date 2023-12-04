@@ -1,3 +1,4 @@
+let colorScheme;
 let curPage;
 let prevPage;
 let nextPage;
