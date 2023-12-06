@@ -1,3 +1,7 @@
+use io, shttrdb
+
+parse_input
+
 TITLE="Blog"
 export TITLE
 PAGE_ID=4

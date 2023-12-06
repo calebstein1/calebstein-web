@@ -24,6 +24,15 @@ if [ "$REQUEST_METHOD" = "POST" ]; then
       set_notice "Software added successfully!"
       do_redirect
     fi
+  elif [ "$_action" = "add_blog_post" ]; then
+    if [ $signed_in -eq 1 ]; then
+      blog_post_id=$(create_table_entry in blog_posts)
+      write_data ${blog_post_id} title ${title} to blog_posts
+      write_data ${blog_post_id} body ${body} to blog_posts
+      write_data ${blog_post_id} created_at $(date -R | tr " " "+") to blog_posts
+      set_notice "Posted successfully!"
+      do_redirect
+    fi
   elif [ "$_action" = "sign_out" ]; then
     sign_out "/cgi-bin/login.sh"
     set_notice "Signed out!"
