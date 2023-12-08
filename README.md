@@ -6,4 +6,4 @@ Built using [Shell on the Shttr](https://github.com/calebstein1/sh-on-the-shttr)
 
 ## Build
 
-Follow the instructions at [shttr.io](https://shttr.io/cgi-bin/readme.sh) to set up your server for Shttr, then create a new Shttr app with Bootstrap and replace the default `cgi-bin` and `shttr` directories with the ones from this repository.
+Create a config.sh in the root of the project with `DEPLOYMENT_TARGET="systemd"`, then use Shttr CLI to deploy to your server with Docker installed.
