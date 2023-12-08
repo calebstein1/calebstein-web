@@ -6,7 +6,7 @@ read_flash
 
 TITLE="Admin Panel"
 export TITLE
-PAGE_ID=6
+PAGE_ID=7
 export PAGE_ID
 
 if [ $signed_in -ne 1 ]; then
@@ -21,6 +21,16 @@ if [ "$REQUEST_METHOD" = "POST" ]; then
       write_data $software_id description ${description} to software
       write_data $software_id code ${code} to software
       write_data $software_id site ${site} to software
+      set_notice "Software added successfully!"
+      do_redirect
+    fi
+  elif [ "$_action" = "add_game" ]; then
+    if [ $signed_in -eq 1 ]; then
+      game_id=$(create_table_entry in games)
+      write_data $game_id name ${name} to games
+      write_data $game_id description ${description} to games
+      write_data $game_id code ${code} to games
+      write_data $game_id site ${site} to games
       set_notice "Software added successfully!"
       do_redirect
     fi

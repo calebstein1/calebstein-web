@@ -1,10 +1,8 @@
-use io, shttrdb
+use shttrdb
 
-parse_input
-
-TITLE="Blog"
+TITLE="Games"
 export TITLE
-PAGE_ID=5
+PAGE_ID=4
 export PAGE_ID
 
 . ${SHTTR_APP}/models/${CONTROLLER}

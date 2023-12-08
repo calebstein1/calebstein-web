@@ -1,0 +1,21 @@
+<h3>Add Game</h3>
+<form method="post">
+  <input type="hidden" name="_action" value="add_game">
+  <div class="form-floating mb-3">
+    <input class="form-control" type="text" name="name" placeholder="Name" required>
+    <label for="name">Name</label>
+  </div>
+  <div class="form-floating mb-3">
+    <textarea class="form-control" name="description" placeholder="Description" required></textarea>
+    <label for="description">Description</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input class="form-control" type="text" name="code" placeholder="Code URL">
+    <label for="code">Code URL</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input class="form-control" type="text" name="site" placeholder="Site URL">
+    <label for="site">Site URL</label>
+  </div>
+  <input class="w-100 btn btn-info" type="submit" value="Submit">
+</form>
