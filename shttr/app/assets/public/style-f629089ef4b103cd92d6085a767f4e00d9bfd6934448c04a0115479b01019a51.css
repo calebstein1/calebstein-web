@@ -1,8 +1,14 @@
 @charset "UTF-8";
+:root {
+  --animation-name-exit: fade-out-up;
+  --animation-name-enter: fade-in-up;
+}
+
 ::-moz-selection {
   color: #ECEFF4;
   background-color: #5E81AC;
 }
+
 ::selection {
   color: #ECEFF4;
   background-color: #5E81AC;
@@ -12071,12 +12077,12 @@ textarea.form-control-lg {
 }
 
 html.turn-advance.turn-exit [data-turn-exit] {
-  animation-name: fade-out-up;
+  animation-name: var(--animation-name-exit);
   animation-duration: 0.3s;
 }
 
 html.turn-advance.turn-enter [data-turn-enter] {
-  animation-name: fade-in-up;
+  animation-name: var(--animation-name-enter);
   animation-duration: 0.6s;
 }
 

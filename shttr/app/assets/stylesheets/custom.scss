@@ -2,6 +2,11 @@
 
 //Enter custom SCSS to customize Bootstrap here
 
+:root {
+  --animation-name-exit: fade-out-up;
+  --animation-name-enter: fade-in-up;
+}
+
 @import "../../../../node_modules/nord/src/sass/nord.scss";
 
 $body_bg: $nord4;

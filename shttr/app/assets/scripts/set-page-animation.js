@@ -1,35 +1,41 @@
+document.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A' || e.target.tagName === 'path' ) {
+        window.lastClickedLink = e.target;
+    }
+}, false);
+
 window.addEventListener("turbo:before-fetch-request", (e) => {
-  console.log(e.explicitOriginalTarget);
-  const css = document.styleSheets[1];
+  console.log(window.lastClickedLink);
+  const css = document.documentElement;
   nextPage = document.querySelector(`[href="${e.detail.url.pathname}"]`).parentElement.getAttribute("data-pageid");
 
   //this is gross :(
   if (nextPage < curPage) {
-    css.cssRules[1313].style.setProperty("animation-name", "fade-out-down");
-    css.cssRules[1314].style.setProperty("animation-name", "fade-in-down");
+    css.style.setProperty("--animation-name-exit", "fade-out-down");
+    css.style.setProperty("--animation-name-enter", "fade-in-down");
   } else {
-    css.cssRules[1313].style.setProperty("animation-name", "fade-out-up");
-    css.cssRules[1314].style.setProperty("animation-name", "fade-in-up");
+    css.style.setProperty("--animation-name-exit", "fade-out-up");
+    css.style.setProperty("--animation-name-enter", "fade-in-up");
   }
 
-  if (e.explicitOriginalTarget.id == "blogLink") {
-    css.cssRules[1313].style.setProperty("animation-name", "fade-out-left");
-    css.cssRules[1314].style.setProperty("animation-name", "fade-in-left");
-  } else if (e.explicitOriginalTarget.id == "backToPosts") {
-    css.cssRules[1313].style.setProperty("animation-name", "fade-out-right");
-    css.cssRules[1314].style.setProperty("animation-name", "fade-in-right");
-  } else if (e.explicitOriginalTarget.tagName == "path") {
-    css.cssRules[1313].style.setProperty("animation-name", "fade-out-right");
-    css.cssRules[1314].style.setProperty("animation-name", "fade-in-right");
+  if (window.lastClickedLink && window.lastClickedLink.id == "blogLink") {
+    css.style.setProperty("--animation-name-exit", "fade-out-left");
+    css.style.setProperty("--animation-name-enter", "fade-in-left");
+  } else if (window.lastClickedLink && window.lastClickedLink.id == "backToPosts") {
+    css.style.setProperty("--animation-name-exit", "fade-out-right");
+    css.style.setProperty("--animation-name-enter", "fade-in-right");
+  } else if (window.lastClickedLink && window.lastClickedLink.tagName == "path") {
+    css.style.setProperty("--animation-name-exit", "fade-out-right");
+    css.style.setProperty("--animation-name-enter", "fade-in-right");
   }
 
   if (viaSwipe == "left") {
-    css.cssRules[1313].style.setProperty("animation-name", "fade-out-left");
-    css.cssRules[1314].style.setProperty("animation-name", "fade-in-left");
+    css.style.setProperty("--animation-name-exit", "fade-out-left");
+    css.style.setProperty("--animation-name-enter", "fade-in-left");
     viaSwipe = false;
   } else if (viaSwipe == "right") {
-    css.cssRules[1313].style.setProperty("animation-name", "fade-out-right");
-    css.cssRules[1314].style.setProperty("animation-name", "fade-in-right");
+    css.style.setProperty("--animation-name-exit", "fade-out-right");
+    css.style.setProperty("--animation-name-enter", "fade-in-right");
     viaSwipe = false;
   }
 });
