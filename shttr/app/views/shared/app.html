@@ -9,13 +9,22 @@
     <script type="importmap">
       {
         "imports": {
-          "turn": "${node_turn}/dist/turn.min.js"
+          "turn": "${node_turn}/dist/turn.min.js",
+          "overlayscrollbars": "${node_overlayscrollbars}/overlayscrollbars.esm.js"
         }
       }
     </script>
     <script type="module">
       import Turn from 'turn';
       Turn.start();
+    </script>
+    <script type="module">
+      import { OverlayScrollbars } from 'overlayscrollbars';
+      const osInstance = OverlayScrollbars(document.querySelector("#scrollBar"), {});
+
+      window.addEventListener("turbo:load", () => {
+        const osInstance = OverlayScrollbars(document.querySelector("#scrollBar"), {});
+      });
     </script>
     <script src="${node_swipe_listener}/dist/swipe-listener.min.js"></script>
     <script src="${SHTTR_ASSETS}/scripts/init.js"></script>
@@ -24,7 +33,7 @@
     <script src="${SHTTR_ASSETS}/scripts/nav-keys.js" defer></script> 
     <script src="${SHTTR_ASSETS}/scripts/set-page-animation.js" defer></script> 
   </head>
-  <body class="d-flex flex-column font-monospace mt-4">
+  <body class="d-flex flex-column font-monospace mt-4" id="scrollBar">
     <input type="hidden" id="page-id" name="page-id" value="${PAGE_ID}">
     <div class="container d-flex justify-content-between">
       <div class="d-flex align-items-center gap-4">

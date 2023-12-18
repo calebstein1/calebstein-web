@@ -1,4 +1,4 @@
-use io, form, @domchristie/turn, swipe-listener
+use io, form, @domchristie/turn, swipe-listener, overlayscrollbars
 
 parse_cookies
 
