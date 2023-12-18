@@ -18,7 +18,7 @@ else
   echo '<ul class="list-unstyled d-flex flex-column gap-4">'
     for blog_post_id in $blog_posts_id_list; do
       title="$(blog_posts_${blog_post_id} title)"
-      echo "<li><a class=\"text-decoration-none\" id=\"blogLink\" href=\"?p=${blog_post_id}\">${title}</a></li>"
+      echo "<li><a class=\"text-decoration-none\" data-id=\"blogLink\" href=\"?p=${blog_post_id}\">${title}</a></li>"
     done
   echo "</ul></div>"
 fi

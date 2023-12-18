@@ -1,11 +1,8 @@
 document.addEventListener('click', function(e) {
-    if (e.target.tagName === 'A' || e.target.tagName === 'path' ) {
-        window.lastClickedLink = e.target;
-    }
+  window.lastClickedLink = e.target;
 }, false);
 
 window.addEventListener("turbo:before-fetch-request", (e) => {
-  console.log(window.lastClickedLink);
   const css = document.documentElement;
   nextPage = document.querySelector(`[href="${e.detail.url.pathname}"]`).parentElement.getAttribute("data-pageid");
 
@@ -18,13 +15,10 @@ window.addEventListener("turbo:before-fetch-request", (e) => {
     css.style.setProperty("--animation-name-enter", "fade-in-up");
   }
 
-  if (window.lastClickedLink && window.lastClickedLink.id == "blogLink") {
+  if (window.lastClickedLink && window.lastClickedLink.getAttribute("data-id") == "blogLink") {
     css.style.setProperty("--animation-name-exit", "fade-out-left");
     css.style.setProperty("--animation-name-enter", "fade-in-left");
-  } else if (window.lastClickedLink && window.lastClickedLink.id == "backToPosts") {
-    css.style.setProperty("--animation-name-exit", "fade-out-right");
-    css.style.setProperty("--animation-name-enter", "fade-in-right");
-  } else if (window.lastClickedLink && window.lastClickedLink.tagName == "path") {
+  } else if (window.lastClickedLink && window.lastClickedLink.getAttribute("data-id") == "backToPosts") {
     css.style.setProperty("--animation-name-exit", "fade-out-right");
     css.style.setProperty("--animation-name-enter", "fade-in-right");
   }
