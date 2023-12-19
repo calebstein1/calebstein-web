@@ -18,9 +18,11 @@ window.addEventListener("turbo:before-fetch-request", (e) => {
   if (window.lastClickedLink && window.lastClickedLink.getAttribute("data-id") == "blogLink") {
     css.style.setProperty("--animation-name-exit", "fade-out-left");
     css.style.setProperty("--animation-name-enter", "fade-in-left");
+    window.lastClickedLink = null;
   } else if (window.lastClickedLink && window.lastClickedLink.getAttribute("data-id") == "backToPosts") {
     css.style.setProperty("--animation-name-exit", "fade-out-right");
     css.style.setProperty("--animation-name-enter", "fade-in-right");
+    window.lastClickedLink = null;
   }
 
   if (viaSwipe == "left") {
