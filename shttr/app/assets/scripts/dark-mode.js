@@ -6,7 +6,8 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   setTimeout(() => {
-    document.styleSheets[1].insertRule("* { transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out; }", document.styleSheets[1].rules.length);
+    document.styleSheets[1].insertRule("p, h1, h3, h5, button { transition: color 0.25s ease-in-out; }", document.styleSheets[1].rules.length);
+    document.styleSheets[1].insertRule("body, li { transition: background-color 0.25s ease-in-out; }", document.styleSheets[1].rules.length);
   }, 500);
 
   document.getElementById("dark-mode-toggle").addEventListener("click", () => {
