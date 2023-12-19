@@ -30,7 +30,7 @@ if ((ua.includes("iPhone")) || (ua.includes("iPad")) || (ua.includes("Android"))
   });
 }
 
-window.addEventListener("wheel", (e) => {
+/*window.addEventListener("wheel", (e) => {
   if ((e.wheelDeltaY > 0) && (notLocked)) {
     if (window.scrollY == 0) {
       notLocked = false;
@@ -45,7 +45,7 @@ window.addEventListener("wheel", (e) => {
       setTimeout(() => { notLocked = true }, 1000);
     }
   }
-});
+});*/
 
 viToggle.addEventListener("click", () => {
   if (viMode) {
